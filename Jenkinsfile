@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Clonar el repositorio desde GitHub, especificando la rama 'developer'
-                git url: 'https://github.com/zeytol/agro-inversiones-dashboard.git', branch: 'developer'
+                // Clonar el repositorio desde GitHub, especificando la rama 'main'
+                git url: 'https://github.com/haroldcutti/Demo-Jenkys.git', branch: 'main'
             }
         }
         stage('Install Dependencies') {
