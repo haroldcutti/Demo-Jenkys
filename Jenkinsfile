@@ -12,7 +12,7 @@ pipeline {
             steps {
                 script {
                     // Instalar dependencias de Node.js
-                    sh 'npm install'
+                    bat 'npm install'
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Compilar el proyecto (en este caso, el frontend)
-                    sh 'npm run build --prod'
+                    bat 'npm run build --prod'
                 }
             }
         }
@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     // Crear la imagen Docker
-                    sh '''
+                    bat '''
                     docker build -t demo-jenkins .
                     '''
                 }
@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     // Ejecutar el contenedor Docker
-                    sh '''
+                    bat '''
                     docker run -d -p 8080:80 demo-jenkins
                     '''
                 }
