@@ -11,8 +11,8 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
-                    // Instalar dependencias de Node.js
-                    bat 'npm install'
+                    // Instalar dependencias de Node.js con --legacy-peer-deps para evitar conflictos
+                    bat 'npm install --force'
                 }
             }
         }
